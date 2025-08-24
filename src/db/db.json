@@ -1,0 +1,39 @@
+{
+  "products": [
+    {
+      "id": "1aa9f2e41-7017-4102bd2f74e00926-8f4b-asdas",
+      "image": "https://bunny-wp-pullzone-o856rmsjyp.b-cdn.net/wp-content/uploads/sites/13/2022/06/house-with-pool-background-1-1200x720.jpg",
+      "price": 540,
+      "name": "Home in Merrick Way ",
+      "desc": "Enchanting three bedroom, three bath home with spacious one bedroom, one bath cabana, in-laws quarters.…"
+    },
+    {
+      "id": "asdadasd-7017-4102bd2f74e00926-8f4b-asdas",
+      "image": "https://bunny-wp-pullzone-o856rmsjyp.b-cdn.net/wp-content/uploads/sites/13/2022/06/House-12-1200x720.jpg",
+      "price": 340,
+      "name": "Villa in Coral Gables",
+      "desc": "Enjoy serenity of Deering Bay whole day from this spectacular North and South, three bedroom,…"
+    },
+    {
+      "id": "1aaasd9f2e41-7017-4102bd2f74e00926-8f4b-asdas",
+      "image": "https://bunny-wp-pullzone-o856rmsjyp.b-cdn.net/wp-content/uploads/sites/13/2022/06/House-13-1200x720.jpg",
+      "price": 820,
+      "name": "Villa on Hollywood Boulevard",
+      "desc": "The very best waterfront location in Harbor Islands complete with private dock and amazing water…"
+    },
+    {
+      "id": "1aa9asdf2e41-7017-4102bd2f74e00926-8f4b-asdas",
+      "image": "https://bunny-wp-pullzone-o856rmsjyp.b-cdn.net/wp-content/uploads/sites/13/2022/06/Property-Listing-11-1200x720.jpg",
+      "price": 5140,
+      "name": "Traditional Food Restaurant",
+      "desc": "We are an award winning and very unique concept inspired by street food – Burgers…"
+    },
+    {
+      "id": "1aa9asdf2e41-7017-4102bd2f74e00926-8f4b-asdas",
+      "image": "https://bunny-wp-pullzone-o856rmsjyp.b-cdn.net/wp-content/uploads/sites/13/2020/06/House-Design.jpg",
+      "price": 5140,
+      "name": "Villa on Grand Avenue",
+      "desc": "Spacious and fabulous home in prime location. This executive style four bed, four bath home…"
+    }
+  ]
+}
