@@ -1,6 +1,5 @@
 @import url("https://fonts.googleapis.com/css2?family=Lora:ital,wght@0,400..700;1,400..700&family=Raleway:ital,wght@0,100..900;1,100..900&family=Roboto:ital,wght@0,100..900;1,100..900&display=swap");
 @import "tailwindcss";
-
 @theme {
   --font-roboto: "Roboto", sans-serif;
   --font-lora: "Lora", serif;
@@ -13,6 +12,8 @@
 }
 
 .swiper-slide {
+  width: 100%;
+  height: 100%;
   display: flex;
   justify-content: center;
   align-items: center;
@@ -25,25 +26,23 @@
   object-fit: cover;
 }
 
-.swiper-pagination {
-  position: static;
-  margin-top: 20px;
-  display: flex;
-  justify-content: center;
-}
-.swiper-pagination-bullet {
-  width: 12px;
-  height: 12px;
-  border: 2px solid #a855f7;
-  background: transparent;
-  opacity: 1;
-  margin: 0 6px;
-  border-radius: 50%;
-}
-
-.swiper-pagination-bullet-active {
-  background: #a855f7;
-}
 .boxshadow {
   box-shadow: 0 17px 70px rgba(0, 0, 0, 0.1);
+}
+
+.darkMode {
+  background-color: black;
+  color: white;
+  h2,
+  h3,
+  h4,
+  h5 {
+    color: white;
+  }
+  ul {
+    color: white;
+    li {
+      color: white;
+    }
+  }
 }

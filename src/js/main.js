@@ -1,12 +1,9 @@
 import apiServices from "./api";
+
 const api = new apiServices("http://localhost:3000/");
 
-var swiper = new Swiper(".mySwiper", {
+var swiper = new Swiper(".myBanner", {
   loop: true,
-  pagination: {
-    el: ".swiper-pagination",
-    clickable: true,
-  },
 
   autoplay: {
     delay: 2500,
@@ -14,12 +11,75 @@ var swiper = new Swiper(".mySwiper", {
   },
 });
 
-const SWIPER_WRAPPER = document.querySelector(".swiper-wrapper");
+const BANNER_WRAPPER = document.querySelector("#bannerWrapper");
 const PRODUCTS_WRAPPER = document.querySelector("#productWrapper");
+const PRODUCT_FORM = document.querySelector("#productForm");
+const PRODUCT_NAME_INPUT = document.querySelector("#productName");
+const PRODUCT_PRICE_INPUT = document.querySelector("#productPrice");
+const PRODUCT_IMAGE_INPUT = document.querySelector("#image");
+const PRODUCT_DESCRIPTION_INPUT = document.querySelector("#description");
+const PRODUCT_LOCATION_INPUT = document.querySelector("#location");
+const PRODUCT_SELLER_NAME = document.querySelector("#sellerName");
+const PRODUCT_SELLER_IMAGE = document.querySelector("#sellerImage");
+const PRODUCT_MODAL = document.querySelector("#productModal");
+const CREATE_BTN = document.querySelector("#create_btn");
+const CLOSE_BTN = document.querySelector("#close_modal");
+const ADMIN_PRODUCT_TABLE = document.querySelector("#productsTableBody");
+const DARK_MODE = document.querySelector("#darkMode");
 
-api.GetProducts("products").then((data) => {
+DARK_MODE.addEventListener("click", (e) => {
+  e.preventDefault();
+  document.body.classList.toggle("darkMode");
+});
+
+PRODUCT_FORM &&
+  PRODUCT_FORM.addEventListener("submit", (e) => {
+    e.preventDefault();
+    const payload = {
+      id: crypto.randomUUID(),
+      name: PRODUCT_NAME_INPUT.value,
+      price: PRODUCT_PRICE_INPUT.value,
+      image: PRODUCT_IMAGE_INPUT.value,
+      desc: PRODUCT_DESCRIPTION_INPUT.value,
+      location: PRODUCT_LOCATION_INPUT.value,
+      authorName: PRODUCT_SELLER_NAME.value,
+      authorImg: PRODUCT_SELLER_IMAGE.value,
+    };
+    console.log("payload", payload);
+    api.postProducts("products", payload);
+  });
+
+CREATE_BTN &&
+  CREATE_BTN.addEventListener("click", (e) => {
+    e.preventDefault();
+    PRODUCT_MODAL.classList.remove("hidden");
+    PRODUCT_MODAL.classList.add("block");
+  });
+CLOSE_BTN &&
+  CLOSE_BTN.addEventListener("click", (e) => {
+    e.preventDefault();
+    PRODUCT_MODAL.classList.add("hidden");
+    PRODUCT_MODAL.classList.remove("block");
+  });
+
+api.getProducts("products").then((data) => {
   data?.forEach((item) => {
-    let renderHTML = `    <div class="swiper-slide">
+    let renderAdmin = `  <td class="px-6 py-4 whitespace-nowrap text-sm text-gray-900">${item?.id}</td>
+                    <td class="px-6 py-4 whitespace-nowrap w-[120px] h-[120px]"> <img src=${item?.image} alt=""></td>
+                    <td class="px-6 py-4 whitespace-nowrap text-sm text-gray-900">${item?.name}</td>
+                    <td class="px-6 py-4 whitespace-nowrap text-sm text-gray-900">${item?.price}$</td>
+                    <td class="px-6 py-4 whitespace-nowrap text-sm font-medium space-x-2">
+                        <button onclick="edititem?(${item?.id})" class="text-primary hover:text-blue-600">✏️ Edit</button>
+                        <button onclick="deleteitem?(${item?.id})" class="text-red-600 hover:text-red-900">🗑️ Delete</button>
+                    </td>
+`;
+    ADMIN_PRODUCT_TABLE.innerHTML += renderAdmin;
+  });
+});
+
+api.getProducts("products").then((data) => {
+  data?.forEach((item) => {
+    let renderHTML = `    <div class="swiper-slide h-full">
                   <div
                     class="box relative group h-full rounded-2xl overflow-hidden"
                   >
@@ -27,7 +87,7 @@ api.GetProducts("products").then((data) => {
                       <img
                         src=${item?.image}
                         alt=""
-                        class="w-full h-full object-cover rounded-2xl group-hover:scale-[1.2] duration-500"
+                        class="w-full h-full  object-cover rounded-2xl group-hover:scale-[1.2] duration-500"
                       />
                     </div>
                     <div class="absolute top-0 right-4 flex gap-2">
@@ -86,12 +146,12 @@ api.GetProducts("products").then((data) => {
                     </div>
                   </div>
                 </div>`;
-    SWIPER_WRAPPER.innerHTML += renderHTML;
+    BANNER_WRAPPER.innerHTML += renderHTML;
   });
   swiper.update();
 });
 
-api.GetProducts("products").then((data) => {
+api.getProducts("products").then((data) => {
   data?.forEach((item) => {
     let renderProducts = ` 
                
