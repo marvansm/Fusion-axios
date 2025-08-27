@@ -19,20 +19,8 @@
   </head>
 
   <body>
-    <div
-    id="Loading"
-      class="loadingScreen fixed w-full h-full top-0 flex items-center justify-center z-50 bg-white "
-    >
-      <div class="loading h-full w-full flex items-center justify-center">
-        <img
-          src="https://mir-s3-cdn-cf.behance.net/project_modules/source/36b79a92992945.5e593eeaebaeb.gif"
-          alt=""
-          class="w-[160px] h-[160px] object-contain"
-        />
-      </div>
-    </div>
-    <header class="">
-      <nav class="container mx-auto py-0 mb-[65px]">
+    <header class="pb-[65px]">
+      <nav class="container mx-auto py-0 mb-[65px] max-w-[1300px]">
         <div class="p-[10px]">
           <div class="grid grid-cols-12 justify-between items-center">
             <div class="col-span-2 py-2.5 w-[200px]">
@@ -49,16 +37,16 @@
                 <li>
                   <a class="text-[#793CFB]" href="">Home</a>
                 </li>
-                <li>
+                <li class="hover:text-[#793CFB] duration-200">
                   <a href="">Properties</a>
                 </li>
-                <li>
+                <li class="hover:text-[#793CFB] duration-200">
                   <a href="">Pages</a>
                 </li>
-                <li>
+                <li class="hover:text-[#793CFB] duration-200">
                   <a href="">Blog</a>
                 </li>
-                <li>
+                <li class="hover:text-[#793CFB] duration-200">
                   <a href="">Contact Us</a>
                 </li>
               </ul>
@@ -82,9 +70,9 @@
       </nav>
     </header>
     <main>
-      <section class="container mx-auto px-[10px]">
+      <section class="container mx-auto px-[10px] max-w-[1300px]">
         <div class="grid grid-cols-2">
-          <div class="left mt-[18px]">
+          <div class="left mt-[18px] z-50">
             <h2
               class="text-[42px] flex items-start flex-col gap-[20px] text-[#1A1A1A] leading-[1] font-lora"
             >
@@ -94,7 +82,7 @@
               >
             </h2>
             <div
-              class="form rounded-[10px] flex items-start justify-start flex-col mt-[55px]"
+              class="form rounded-[10px] flex items-start justify-start flex-col mt-[55px] w-[680px]"
             >
               <div class="tabs rounded-t-[10px] overflow-hidden">
                 <ul
@@ -110,7 +98,7 @@
                 </ul>
               </div>
               <div
-                class="inp flex items-center px-[16px] pt-[21px] pb-[21px] shadow-2xl shadow-neutral-400 w-full rounded-b-[10px] rounded-tr-[10px] overflow-hidden"
+                class="inp flex items-center px-[16px] pt-[21px] pb-[21px] shadow-2xl shadow-neutral-400 w-full rounded-b-[10px] rounded-tr-[10px] overflow-hidden bg-[#fff]"
               >
                 <input
                   type="text"
@@ -344,8 +332,64 @@
           <div class="right">
             <div class="swiper mySwiper">
               <div class="swiper-wrapper"></div>
-              <div class="swiper-pagination"></div>
             </div>
+            <div class="swiper-pagination"></div>
+          </div>
+        </div>
+      </section>
+      <section id="NewlyListed" class="container mx-auto max-w-[1300px]">
+        <div class="h-[105px]"></div>
+        <div
+          class="heading flex items-center justify-center flex-col mb-[80px] pt-[105px] gap-4"
+        >
+          <h2
+            class="text-[24px] font-normal text-[#793DF9] font-lora leading-[1]"
+          >
+            Recent
+          </h2>
+          <h3
+            class="text-[38px] font-medium font-lora leading-[1] text-[#1a1a1a]"
+          >
+            Newly Listed Projects
+          </h3>
+        </div>
+        <div class="allProducts flex items-center justify-center flex-col">
+          <ul
+            class="flex items-center gap-[28px] mb-[45px] font-roboto font-semibold text-[20px] leading-[1.2] capitalize"
+          >
+            <li
+              class="py-[10px] px-[20px] rounded-[7px] bg-[#793df9] text-[#fff] boxshadow cursor-pointer"
+            >
+              All
+            </li>
+            <li
+              class="py-[10px] px-[20px] rounded-[7px] bg-[#fff] text-[#1a1a1a] boxshadow cursor-pointer hover:bg-[#793df9] hover:text-[#fff] duration-200"
+            >
+              For Rent
+            </li>
+            <li
+              class="py-[10px] px-[20px] rounded-[7px] bg-[#fff] text-[#1a1a1a] boxshadow cursor-pointer hover:bg-[#793df9] hover:text-[#fff] duration-200"
+            >
+              For Sale
+            </li>
+            <li
+              class="py-[10px] px-[20px] rounded-[7px] bg-[#fff] text-[#1a1a1a] boxshadow cursor-pointer hover:bg-[#793df9] hover:text-[#fff] duration-200"
+            >
+              Apartment
+            </li>
+            <li
+              class="py-[10px] px-[20px] rounded-[7px] bg-[#fff] text-[#1a1a1a] boxshadow cursor-pointer hover:bg-[#793df9] hover:text-[#fff] duration-200"
+            >
+              Office
+            </li>
+            <li
+              class="py-[10px] px-[20px] rounded-[7px] bg-[#fff] text-[#1a1a1a] boxshadow cursor-pointer hover:bg-[#793df9] hover:text-[#fff] duration-200"
+            >
+              Shop
+            </li>
+          </ul>
+
+     <div class="grid grid-cols-3 gap-[40px]" id="productWrapper"></div>
           </div>
         </div>
       </section>
@@ -354,6 +398,6 @@
 
     <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
 
-    <script type="module" src="/src/main.js"></script>
+    <script type="module" src="./src/js/main.js"></script>
   </body>
 </html>

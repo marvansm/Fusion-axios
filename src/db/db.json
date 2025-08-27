@@ -3,37 +3,68 @@
     {
       "id": "1aa9f2e41-7017-4102bd2f74e00926-8f4b-asdas",
       "image": "https://bunny-wp-pullzone-o856rmsjyp.b-cdn.net/wp-content/uploads/sites/13/2022/06/house-with-pool-background-1-1200x720.jpg",
-      "price": 540,
+      "price": "600.000",
       "name": "Home in Merrick Way ",
-      "desc": "Enchanting three bedroom, three bath home with spacious one bedroom, one bath cabana, in-laws quarters.…"
+      "desc": "Enchanting three bedroom, three bath home with spacious one bedroom, one bath cabana, in-laws quarters.…",
+      "location": "Merrick Way, Miami, FL 33134, USA ",
+      "created": " March 15, 2025",
+      "authorImg": "https://bunny-wp-pullzone-o856rmsjyp.b-cdn.net/wp-content/uploads/sites/13/2022/05/agent3-210x210.jpg",
+      "authorName": "John Doe"
     },
     {
       "id": "asdadasd-7017-4102bd2f74e00926-8f4b-asdas",
       "image": "https://bunny-wp-pullzone-o856rmsjyp.b-cdn.net/wp-content/uploads/sites/13/2022/06/House-12-1200x720.jpg",
-      "price": 340,
+      "price": "340.000",
       "name": "Villa in Coral Gables",
-      "desc": "Enjoy serenity of Deering Bay whole day from this spectacular North and South, three bedroom,…"
+      "desc": "Enjoy serenity of Deering Bay whole day from this spectacular North and South, three bedroom,…",
+      "location": "Coral Gables, FL 33134, USA",
+      "created": " January 15, 2025",
+      "authorImg": "https://bunny-wp-pullzone-o856rmsjyp.b-cdn.net/wp-content/uploads/sites/13/2020/05/Nathan-James-210x210.jpg",
+      "authorName": "Melissa William"
     },
     {
       "id": "1aaasd9f2e41-7017-4102bd2f74e00926-8f4b-asdas",
       "image": "https://bunny-wp-pullzone-o856rmsjyp.b-cdn.net/wp-content/uploads/sites/13/2022/06/House-13-1200x720.jpg",
-      "price": 820,
+      "price": "150.000",
       "name": "Villa on Hollywood Boulevard",
-      "desc": "The very best waterfront location in Harbor Islands complete with private dock and amazing water…"
+      "desc": "The very best waterfront location in Harbor Islands complete with private dock and amazing water…",
+      "location": "Hollywood Boulevard, Los Angeles, CA 90028, USA",
+      "created": " January 15, 2025",
+      "authorImg": "https://bunny-wp-pullzone-o856rmsjyp.b-cdn.net/wp-content/uploads/sites/13/2025/02/freya-210x210.jpg",
+      "authorName": "Nathan James"
     },
     {
       "id": "1aa9asdf2e41-7017-4102bd2f74e00926-8f4b-asdas",
       "image": "https://bunny-wp-pullzone-o856rmsjyp.b-cdn.net/wp-content/uploads/sites/13/2022/06/Property-Listing-11-1200x720.jpg",
-      "price": 5140,
+      "price": "820.000 ",
       "name": "Traditional Food Restaurant",
-      "desc": "We are an award winning and very unique concept inspired by street food – Burgers…"
+      "desc": "We are an award winning and very unique concept inspired by street food – Burgers…",
+      "location": "Miami, FL 33134, USA",
+      "created": "July 30, 2025",
+      "authorImg": "https://bunny-wp-pullzone-o856rmsjyp.b-cdn.net/wp-content/uploads/sites/13/2022/05/agent2-210x210.jpg",
+      "authorName": "Alice Brian"
     },
     {
       "id": "1aa9asdf2e41-7017-4102bd2f74e00926-8f4b-asdas",
       "image": "https://bunny-wp-pullzone-o856rmsjyp.b-cdn.net/wp-content/uploads/sites/13/2020/06/House-Design.jpg",
-      "price": 5140,
+      "price": "400.000",
       "name": "Villa on Grand Avenue",
-      "desc": "Spacious and fabulous home in prime location. This executive style four bed, four bath home…"
+      "desc": "Spacious and fabulous home in prime location. This executive style four bed, four bath home…",
+      "location": "Grand Avenue, Miami, FL 33134, USA",
+      "created": "August 30, 2025",
+      "authorImg": "https://bunny-wp-pullzone-o856rmsjyp.b-cdn.net/wp-content/uploads/sites/13/2022/05/agent1-210x210.jpg",
+      "authorName": "John David"
+    },
+    {
+      "id": "1aa9asdf2e41-7017-4102bd2f74e00926-8f4b-asda12s",
+      "image": "https://bunny-wp-pullzone-o856rmsjyp.b-cdn.net/wp-content/uploads/sites/13/2022/06/House-14-680x510.jpg",
+      "price": "600.000",
+      "name": " Office Space at Northwest 107th",
+      "desc": "Spacious and fabulous home in prime location. This executive style four bed, four bath home…",
+      "location": "Grand Avenue, Miami, FL 33134, USA",
+      "created": "August 30, 2025",
+      "authorImg": "https://bunny-wp-pullzone-o856rmsjyp.b-cdn.net/wp-content/uploads/sites/13/2022/05/agent1-210x210.jpg",
+      "authorName": "Marvan Mammadli"
     }
   ]
 }
