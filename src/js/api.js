@@ -27,6 +27,14 @@ class apiServices {
       console.log(error);
     }
   }
+  async deleteProduct(url, id) {
+    try {
+      const res = await this.axiosInstance.delete(`${url}/${id}`);
+      return res.data;
+    } catch (error) {
+      console.log(error);
+    }
+  }
 }
 
 export default apiServices;

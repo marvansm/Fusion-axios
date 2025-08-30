@@ -9,6 +9,20 @@ var swiper = new Swiper(".myBanner", {
     delay: 2500,
     disableOnInteraction: false,
   },
+  breakpoints: {
+    320: {
+      slidesPerView: 1,
+      spaceBetween: 10,
+    },
+    640: {
+      slidesPerView: 1,
+      spaceBetween: 15,
+    },
+    768: {
+      slidesPerView: 1,
+      spaceBetween: 20,
+    },
+  },
 });
 
 const BANNER_WRAPPER = document.querySelector("#bannerWrapper");
@@ -26,11 +40,40 @@ const CREATE_BTN = document.querySelector("#create_btn");
 const CLOSE_BTN = document.querySelector("#close_modal");
 const ADMIN_PRODUCT_TABLE = document.querySelector("#productsTableBody");
 const DARK_MODE = document.querySelector("#darkMode");
+const menuToggle = document.getElementById("menuToggle");
+const mobileMenu = document.getElementById("mobileMenu");
+const scrollTopBtn = document.querySelector(".scrollbtn");
 
-DARK_MODE.addEventListener("click", (e) => {
-  e.preventDefault();
-  document.body.classList.toggle("darkMode");
-});
+scrollTopBtn &&
+  scrollTopBtn.addEventListener("click", () => {
+    window.scrollTo({
+      top: 0,
+      behavior: "smooth",
+    });
+  });
+
+menuToggle &&
+  menuToggle.addEventListener("click", () => {
+    mobileMenu.classList.toggle("hidden");
+  });
+
+if (localStorage.getItem("theme") === "dark") {
+  document.documentElement.classList.add("dark");
+} else {
+  document.documentElement.classList.remove("dark");
+  localStorage.setItem("theme", "light");
+}
+
+DARK_MODE &&
+  DARK_MODE.addEventListener("click", (e) => {
+    e.preventDefault();
+    document.documentElement.classList.toggle("dark");
+    if (document.documentElement.classList.contains("dark")) {
+      localStorage.setItem("theme", "dark");
+    } else {
+      localStorage.setItem("theme", "light");
+    }
+  });
 
 PRODUCT_FORM &&
   PRODUCT_FORM.addEventListener("submit", (e) => {
@@ -47,6 +90,7 @@ PRODUCT_FORM &&
     };
     console.log("payload", payload);
     api.postProducts("products", payload);
+    window.location.reload();
   });
 
 CREATE_BTN &&
@@ -64,14 +108,15 @@ CLOSE_BTN &&
 
 api.getProducts("products").then((data) => {
   data?.forEach((item) => {
-    let renderAdmin = `  <td class="px-6 py-4 whitespace-nowrap text-sm text-gray-900">${item?.id}</td>
+    let renderAdmin = `
+        <tr >
+    <td class="px-6 py-4 whitespace-nowrap text-sm text-gray-900">${item?.id}</td>
                     <td class="px-6 py-4 whitespace-nowrap w-[120px] h-[120px]"> <img src=${item?.image} alt=""></td>
                     <td class="px-6 py-4 whitespace-nowrap text-sm text-gray-900">${item?.name}</td>
                     <td class="px-6 py-4 whitespace-nowrap text-sm text-gray-900">${item?.price}$</td>
-                    <td class="px-6 py-4 whitespace-nowrap text-sm font-medium space-x-2">
-                        <button onclick="edititem?(${item?.id})" class="text-primary hover:text-blue-600">✏️ Edit</button>
-                        <button onclick="deleteitem?(${item?.id})" class="text-red-600 hover:text-red-900">🗑️ Delete</button>
+                    <td class="px-6 py-4 whitespace-nowrap text-sm font-medium space-x-2">            
                     </td>
+                    </tr>
 `;
     ADMIN_PRODUCT_TABLE.innerHTML += renderAdmin;
   });
@@ -146,16 +191,16 @@ api.getProducts("products").then((data) => {
                     </div>
                   </div>
                 </div>`;
-    BANNER_WRAPPER.innerHTML += renderHTML;
+    BANNER_WRAPPER && (BANNER_WRAPPER.innerHTML += renderHTML);
   });
-  swiper.update();
+  swiper && swiper.update();
 });
 
 api.getProducts("products").then((data) => {
   data?.forEach((item) => {
     let renderProducts = ` 
                
-               <div class="box h-full shadow-[0_12px_34px_rgba(0,0,0,0.12)] rounded-2xl overflow-hidden group"
+               <div id=${item?.id} class="box bg-[#fff] h-full shadow-[0_12px_34px_rgba(0,0,0,0.12)] rounded-2xl overflow-hidden group"
                 >
                   <div class="boxImg relative overflow-hidden">
                     <img
@@ -471,7 +516,7 @@ api.getProducts("products").then((data) => {
                     </div>
                   </div>
                 </div>`;
-    PRODUCTS_WRAPPER.innerHTML += renderProducts;
+    PRODUCTS_WRAPPER && (PRODUCTS_WRAPPER.innerHTML += renderProducts);
   });
-  swiper.update();
+  swiper && swiper.update();
 });
